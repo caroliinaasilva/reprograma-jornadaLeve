@@ -15,23 +15,23 @@ const createPaciente = async (req, res) => {
     }
 }
 
-const getAll = async (req, res) =>{
-    try{
-        const allPacientes = await  PacientesModel.find()
+const getAll = async (req, res) => {
+    try {
+        const allPacientes = await PacientesModel.find()
         res.status(200).json(allPacientes)
-    }catch(error) {
+    } catch (error) {
         console.error(error)
-        res.status(500).json({message: error.message})
+        res.status(500).json({ message: error.message })
     }
 
 }
-const getById = async(req, res) => {
-    try{
+const getById = async (req, res) => {
+    try {
         const findpaciente = await PacientesModel.findById(req.params.body)
         res.status(200).json(findpaciente)
-    } catch(error){
+    } catch (error) {
         console.error(error)
-    res.status(500).json({message: error.message})
+        res.status(500).json({ message: error.message })
     }
 }
 module.exports = {
