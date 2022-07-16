@@ -1,6 +1,6 @@
 const app = require('./src/app.js')
 
-const PORT = 8000
+const PORT = process.env.PORT
 
 app.listen(PORT, () =>{
     console.log(`Banco de dados conectado`)
