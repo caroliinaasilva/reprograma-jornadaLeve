@@ -4,8 +4,8 @@ const mongoose = require ('mongoose')
 const pacienteSchema = mongoose.Schema({
     _id: {
         type: mongoose.Schema.Types.ObjectId,
-        
-      },
+        default: mongoose.Types.ObjectId
+        },
 
     cpf: {
         type: String,
@@ -18,10 +18,11 @@ const pacienteSchema = mongoose.Schema({
         required: true
         
     },
-    dataDeNascimento:{
-    type:Date
-   }
-})
+    date: {
+        type: String,
+        required: true
+    },
+}, { timestamps: true }) 
 
 const Model = mongoose.model('Paciente', pacienteSchema)
 
