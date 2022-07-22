@@ -3,7 +3,7 @@ const mongoose = require ('mongoose')
 
 const pacienteSchema = mongoose.Schema({
     _id: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Types.ObjectId,
         default: mongoose.Types.ObjectId
         },
 
@@ -24,6 +24,6 @@ const pacienteSchema = mongoose.Schema({
     },
 }, { timestamps: true }) 
 
-const Model = mongoose.model('Paciente', pacienteSchema)
+const Model = mongoose.model('paciente', pacienteSchema)
 
 module.exports = Model

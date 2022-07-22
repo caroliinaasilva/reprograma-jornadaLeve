@@ -25,15 +25,15 @@ const getAll = async (req, res) => {
     }
 
 }
-// const getById = async (req, res) => {
-//     try {
-//         const find = await PacientesModel.findById(req.params.id)
-//         res.status(200).json(find)
-//       } catch (error) {
-//         console.error(error)
-//         res.status(500).json({ message: error.message })
-//       }
-//    }
+const getPacienteById = async (req, res) => {
+    try {
+        const findPaciente = await PacientesModel.findById(req.params.id)
+        res.status(200).json(findPaciente)
+      } catch (error) {
+        console.error(error)
+        res.status(500).json({ message: error.message })
+      }
+   }
 
 const updatePaciente = async (req, res) => {
     try {
@@ -52,7 +52,7 @@ const updatePaciente = async (req, res) => {
 const deletePaciente = async (req, res) => {
     try{
         const {id} = req.params
-       await PacientesModel.findByIdAndDelete(req.params.find)
+       await PacientesModel.findByIdAndDelete(req.params.id)
         const message = `Paciente com o ${id} deletada`
         res.status(200).json({ message })
     } catch(error) {
@@ -60,10 +60,12 @@ const deletePaciente = async (req, res) => {
     res.status(500).json({message: error.message })
 }
 }
+
+
 module.exports = {
     createPaciente,
     getAll, 
-    // getById
+    getPacienteById,
     updatePaciente,
-   deletePaciente
+    deletePaciente
 }

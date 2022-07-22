@@ -5,6 +5,7 @@ const mongoose = require('./database/mongooseConnect')
 const swaggerUi = require('swagger-ui-express');
 const swaggerFile = require('../swagger/swagger_output.json');
 const pacientesRoutes = require('./routes/pacientesRoutes')
+const psicologasRoutes = require('./routes/psicologasRoutes')
 
 
 const app = express()
@@ -16,6 +17,7 @@ app.use(cors())
 mongoose.connect()
 
 app.use(pacientesRoutes)
+app.use(psicologasRoutes)
 
 app.use('/minha-rota-de-documentacao', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
