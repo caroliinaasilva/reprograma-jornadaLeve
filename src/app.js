@@ -6,6 +6,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerFile = require('../swagger/swagger_output.json');
 const pacientesRoutes = require('./routes/pacientesRoutes')
 const psicologasRoutes = require('./routes/psicologasRoutes')
+const userRoutes = require('./routes/userRoute')
 
 
 const app = express()
@@ -18,6 +19,7 @@ mongoose.connect()
 
 app.use(pacientesRoutes)
 app.use(psicologasRoutes)
+app.use(userRoutes)
 
 app.use('/minha-rota-de-documentacao', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
