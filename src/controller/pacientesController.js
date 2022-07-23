@@ -2,9 +2,9 @@ const PacientesModel = require('../models/pacientesModel')
 
 const createPaciente = async (req, res) => {
     try {
-        const { cpf, nome, date } = req.body
+        const { cpf, nomeCompleto, dataDeNascimento} = req.body
         const newPaciente = new PacientesModel({
-            cpf, nome, date
+            cpf, nomeCompleto, dataDeNascimento
         })
         const savedPaciente = await newPaciente.save()
         res.status(201).json({ message: 'nova paciente criada', savedPaciente })
@@ -14,6 +14,7 @@ const createPaciente = async (req, res) => {
         res.status(500).json({ message: error.message })
     }
 }
+
 
 const getAll = async (req, res) => {
     try {
@@ -37,9 +38,9 @@ const getPacienteById = async (req, res) => {
 
 const updatePaciente = async (req, res) => {
     try {
-        const { nome, cpf, date } = req.body
+        const { nomeCompleto, cpf, dataDeNascimento } = req.body
         const updatePaciente = await PacientesModel.findByIdAndUpdate(req.params.id, {
-            nome, cpf, date
+            nomeCompleto, cpf, dataDeNascimento
         })
         res.status(200).json(updatePaciente)
     } catch (error) {
