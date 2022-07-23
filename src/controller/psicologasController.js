@@ -15,6 +15,9 @@ const createPsicologa = async (req, res) => {
     }
 }
 
+
+
+
 const findAll = async(req, res)  =>{
     try {
         const allpsicos = await PsicologasModel.find()
@@ -64,3 +67,4 @@ res.status(500).json({message: error.message })
 module.exports = {
     createPsicologa, findAll, getpsicobyId, updatePsico, deletePsico
 }
+

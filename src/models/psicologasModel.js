@@ -7,10 +7,11 @@ const psicologaSchema = mongoose.Schema({
     },
     nomeCompleto: {
         type: String,
+        required: true
     },
 
     crp: {
-        type: String,
+        type: Number,
         unique: true
     },
 

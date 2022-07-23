@@ -22,8 +22,9 @@ const pacienteSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    
 }, { timestamps: true })
 
-const Model = mongoose.model('paciente', pacienteSchema)
+const Model = mongoose.model('pacientes', pacienteSchema)
 
 module.exports = Model

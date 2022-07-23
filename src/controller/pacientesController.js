@@ -2,12 +2,14 @@ const PacientesModel = require('../models/pacientesModel')
 
 const createPatient = async (req, res) => {
     try {
-        const { cpf, nomeCompleto, dataDeNascimento} = req.body
-        const newPatient = new PacientesModel({
-            cpf, nomeCompleto, dataDeNascimento
+
+    const { cpf, nomeCompleto, dataDeNascimento } = req.body
+      
+    const newPatient = new PacientesModel({            
+        cpf, nomeCompleto, dataDeNascimento
         })
-        const savedPatient = await newPatient.save()
-        res.status(201).json({ message: 'nova paciente criada', savedPatient})
+    const savedPatient = await newPatient.save()
+        res.status(201).json({ message: 'nova paciente criada', savedPatient })
 
     } catch (error) {
         console.error(error)
@@ -29,11 +31,11 @@ const getPatientById = async (req, res) => {
     try {
         const findPatient = await PacientesModel.findById(req.params.id)
         res.status(200).json(findPatient)
-      } catch (error) {
+    } catch (error) {
         console.error(error)
         res.status(500).json({ message: error.message })
-      }
-   }
+    }
+}
 
 const updatePatient = async (req, res) => {
     try {
@@ -50,21 +52,21 @@ const updatePatient = async (req, res) => {
 }
 
 const deletePatient = async (req, res) => {
-    try{
-        const {id} = req.params
-       await PacientesModel.findByIdAndDelete(req.params.id)
+    try {
+        const { id } = req.params
+        await PacientesModel.findByIdAndDelete(req.params.id)
         const message = `Paciente com o ${id} deletada`
         res.status(200).json({ message })
-    } catch(error) {
-    console.error(error)
-    res.status(500).json({message: error.message })
-}
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({ message: error.message })
+    }
 }
 
 
 module.exports = {
     createPatient,
-    getAll, 
+    getAll,
     getPatientById,
     updatePatient,
     deletePatient

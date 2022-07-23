@@ -1,5 +1,5 @@
-const User = require('../models/userModel')
-const bcrypt = require('bcrypt');
+const User = require ('../models/userModel')
+
 
 const create = (req, res) => {
     const senhaComHash = bcrypt.hashSync(req.body.senha, 10);
@@ -16,5 +16,5 @@ const create = (req, res) => {
 };
 
 module.exports = {
-    create,
+    create
 }
