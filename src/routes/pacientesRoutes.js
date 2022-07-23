@@ -3,10 +3,10 @@ const express = require('express')
 
 const router = express.Router()
 
-router.post('/paciente', controller.createPaciente)
+router.post('/paciente', controller.createPatient)
 router.get('/pacientes', controller.getAll)
-router.get('/paciente/:id', controller.getPacienteById)
-router.patch('/paciente/:id', controller.updatePaciente)
-router.delete('/paciente/:id', controller.deletePaciente)
+router.get('/paciente/:id', controller.getPatientById)
+router.patch('/paciente/:id', controller.updatePatient)
+router.delete('/paciente/:id', controller.deletePatient)
 
 module.exports = router

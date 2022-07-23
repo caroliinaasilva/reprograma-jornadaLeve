@@ -1,48 +1,47 @@
 const PacientesModel = require('../models/pacientesModel')
 
-const createPaciente = async (req, res) => {
+const createPatient = async (req, res) => {
     try {
         const { cpf, nomeCompleto, dataDeNascimento} = req.body
-        const newPaciente = new PacientesModel({
+        const newPatient = new PacientesModel({
             cpf, nomeCompleto, dataDeNascimento
         })
-        const savedPaciente = await newPaciente.save()
-        res.status(201).json({ message: 'nova paciente criada', savedPaciente })
+        const savedPatient = await newPatient.save()
+        res.status(201).json({ message: 'nova paciente criada', savedPatient})
 
     } catch (error) {
         console.error(error)
         res.status(500).json({ message: error.message })
     }
 }
-
 
 const getAll = async (req, res) => {
     try {
-        const allPacientes = await PacientesModel.find()
-        res.status(200).json(allPacientes)
+        const allPacient = await PacientesModel.find()
+        res.status(200).json(allPacient)
     } catch (error) {
         console.error(error)
         res.status(500).json({ message: error.message })
     }
 
 }
-const getPacienteById = async (req, res) => {
+const getPatientById = async (req, res) => {
     try {
-        const findPaciente = await PacientesModel.findById(req.params.id)
-        res.status(200).json(findPaciente)
+        const findPatient = await PacientesModel.findById(req.params.id)
+        res.status(200).json(findPatient)
       } catch (error) {
         console.error(error)
         res.status(500).json({ message: error.message })
       }
    }
 
-const updatePaciente = async (req, res) => {
+const updatePatient = async (req, res) => {
     try {
         const { nomeCompleto, cpf, dataDeNascimento } = req.body
-        const updatePaciente = await PacientesModel.findByIdAndUpdate(req.params.id, {
+        const updatePatient = await PacientesModel.findByIdAndUpdate(req.params.id, {
             nomeCompleto, cpf, dataDeNascimento
         })
-        res.status(200).json(updatePaciente)
+        res.status(200).json(updatePatient)
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
@@ -50,7 +49,7 @@ const updatePaciente = async (req, res) => {
 
 }
 
-const deletePaciente = async (req, res) => {
+const deletePatient = async (req, res) => {
     try{
         const {id} = req.params
        await PacientesModel.findByIdAndDelete(req.params.id)
@@ -64,9 +63,9 @@ const deletePaciente = async (req, res) => {
 
 
 module.exports = {
-    createPaciente,
+    createPatient,
     getAll, 
-    getPacienteById,
-    updatePaciente,
-    deletePaciente
+    getPatientById,
+    updatePatient,
+    deletePatient
 }
