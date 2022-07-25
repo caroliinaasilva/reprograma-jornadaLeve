@@ -11,6 +11,17 @@
     "http"
   ],
   "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/paciente": {
       "post": {
         "description": "",
@@ -24,10 +35,10 @@
                 "cpf": {
                   "example": "any"
                 },
-                "nome": {
+                "nomeCompleto": {
                   "example": "any"
                 },
-                "date": {
+                "dataDeNascimento": {
                   "example": "any"
                 }
               }
@@ -93,13 +104,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "nome": {
+                "nomeCompleto": {
                   "example": "any"
                 },
                 "cpf": {
                   "example": "any"
                 },
-                "date": {
+                "dataDeNascimento": {
                   "example": "any"
                 }
               }
