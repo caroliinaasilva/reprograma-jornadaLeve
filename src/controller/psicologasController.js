@@ -3,6 +3,19 @@ const PsicologasModel = require('../models/psicologasModel')
 
 const createPsicologa = async (req, res) => {
     try{
+        const authHeader = req.get('authorization')
+        if (!authHeader) {
+            return res.status(401).send('You need authorization to access')
+          }
+          const token = authHeader.split(' ')[1] 
+        
+    await jwt.verify(token, SECRET, async function (err){
+        if(err){
+            return res.status(403).send('Denaid Access')
+        }
+    })
+
+
         const { nomeCompleto, crp, especialidades, biografia } = req.body
         const newPsicologa = new PsicologasModel({
             nomeCompleto, crp, especialidades, biografia
@@ -40,6 +53,18 @@ const getpsicobyId = async (res, req) => {
 
 const updatePsico = async(req, res) => {
     try{
+        const authHeader = req.get('authorization')
+        if (!authHeader) {
+            return res.status(401).send('You need authorization to access')
+          }
+          const token = authHeader.split(' ')[1] 
+        
+    await jwt.verify(token, SECRET, async function (err){
+        if(err){
+            return res.status(403).send('Denaid Access')
+        }
+    })
+
     const { nomeCompleto, crp, especialidades, biografia } = req.body
     const updatePsico = await PsicologasModel.findByIdAndUpdate(req.params.id, ({
         nomeCompleto, crp, especialidades, biografia
@@ -53,6 +78,18 @@ const updatePsico = async(req, res) => {
 
 const deletePsico = async (req, res) => {
     try{
+        const authHeader = req.get('authorization')
+        if (!authHeader) {
+            return res.status(401).send('You need authorization to access')
+          }
+          const token = authHeader.split(' ')[1] 
+        
+    await jwt.verify(token, SECRET, async function (err){
+        if(err){
+            return res.status(403).send('Denaid Access')
+        }
+    })
+
    const {id} = req.params
    await PsicologasModel.findByIdAndDelete(req.params.id)
    const message = `Psicologa com o ${id} deletada com sucesso`

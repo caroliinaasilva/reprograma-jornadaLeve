@@ -2,7 +2,18 @@ const PacientesModel = require('../models/pacientesModel')
 
 const createPatient = async (req, res) => {
     try {
-
+        const authHeader = req.get('authorization')
+        if (!authHeader) {
+            return res.status(401).send('You need authorization to access')
+          }
+          const token = authHeader.split(' ')[1] 
+        
+    await jwt.verify(token, SECRET, async function (err){
+        if(err){
+            return res.status(403).send('Denaid Access')
+        }
+    })
+          
     const { cpf, nomeCompleto, dataDeNascimento } = req.body
       
     const newPatient = new PacientesModel({            
@@ -39,6 +50,19 @@ const getPatientById = async (req, res) => {
 
 const updatePatient = async (req, res) => {
     try {
+        const authHeader = req.get('authorization')
+        if (!authHeader) {
+            return res.status(401).send('You need authorization to access')
+          }
+          const token = authHeader.split(' ')[1] 
+        
+    await jwt.verify(token, SECRET, async function (err){
+        if(err){
+            return res.status(403).send('Denaid Access')
+        }
+    })
+
+
         const { nomeCompleto, cpf, dataDeNascimento } = req.body
         const updatePatient = await PacientesModel.findByIdAndUpdate(req.params.id, {
             nomeCompleto, cpf, dataDeNascimento
@@ -53,6 +77,18 @@ const updatePatient = async (req, res) => {
 
 const deletePatient = async (req, res) => {
     try {
+        const authHeader = req.get('authorization')
+        if (!authHeader) {
+            return res.status(401).send('You need authorization to access')
+          }
+          const token = authHeader.split(' ')[1] 
+        
+    await jwt.verify(token, SECRET, async function (err){
+        if(err){
+            return res.status(403).send('Denaid Access')
+        }
+    })
+
         const { id } = req.params
         await PacientesModel.findByIdAndDelete(req.params.id)
         const message = `Paciente com o ${id} deletada`
