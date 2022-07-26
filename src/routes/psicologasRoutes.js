@@ -1,12 +1,12 @@
-const controller = require('../controller/psicologasController')
-const express = require('express')
+const express = require('express');
+const controller = require('../controller/psicologasController');
 
-const router = express.Router()
+const router = express.Router();
 
-router.post('/psicologa', controller.createPsicologa)
-router.get('/psicologas', controller.findAll)
-router.get('/psicologa/:id', controller.getpsicobyId)
-router.patch('/psicologa/:id', controller.updatePsico)
-router.delete('/psicologa/:id', controller.deletePsico)
+router.post('/psicologa', controller.createPsicologa);
+router.get('/psicologas', controller.findAll);
+router.get('/psicologa/:id', controller.getpsicobyId);
+router.patch('/psicologa/:id', controller.updatePsico);
+router.delete('/psicologa/:id', controller.deletePsico);
 
-module.exports = router
+module.exports = router;

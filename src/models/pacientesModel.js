@@ -1,30 +1,29 @@
-const mongoose = require('mongoose')
-
+const mongoose = require('mongoose');
 
 const pacienteSchema = mongoose.Schema({
-    _id: {
-        type: mongoose.Types.ObjectId,
-        default: mongoose.Types.ObjectId
-    },
-    nomeCompleto: {
+  _id: {
+    type: mongoose.Types.ObjectId,
+    default: mongoose.Types.ObjectId,
+  },
+  nomeCompleto: {
     type: String,
-    required: true
+    required: true,
 
-    },
-    cpf: {
-        type: Number,
-        required: true,
-        unique: true,
+  },
+  cpf: {
+    type: Number,
+    required: true,
+    unique: true,
 
-    },
+  },
 
-    dataDeNascimento: {
-        type: String,
-        required: true
-    },
-    
-}, { timestamps: true })
+  dataDeNascimento: {
+    type: String,
+    required: true,
+  },
 
-const Model = mongoose.model('pacientes', pacienteSchema)
+}, { timestamps: true });
 
-module.exports = Model
+const Model = mongoose.model('pacientes', pacienteSchema);
+
+module.exports = Model;

@@ -1,7 +1,7 @@
-const app = require('./src/app.js')
+const app = require('./src/app.js');
 
-const PORT = process.env.PORT
+const { PORT } = process.env;
 
-app.listen(PORT, () =>{
-    console.log(`Banco de dados conectado`)
-})
+app.listen(PORT, () => {
+  console.log('Banco de dados conectado');
+});
