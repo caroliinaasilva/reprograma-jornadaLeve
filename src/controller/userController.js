@@ -1,8 +1,8 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
+const SECRET = process.env.SECRET
 
-const { SECRET } = process.env;
 
 const create = (req, res) => {
   const senhaComHash = bcrypt.hashSync(req.body.senha, 10);
