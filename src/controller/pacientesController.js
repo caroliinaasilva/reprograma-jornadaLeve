@@ -1,4 +1,6 @@
 const PacientesModel = require('../models/pacientesModel');
+const jwt = require('jsonwebtoken')
+const SECRET = process.env.SECRET
 
 const createPatient = async (req, res) => {
   try {
