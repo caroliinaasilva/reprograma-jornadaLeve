@@ -188,9 +188,6 @@
                 },
                 "especialidades": {
                   "example": "any"
-                },
-                "biografia": {
-                  "example": "any"
                 }
               }
             }

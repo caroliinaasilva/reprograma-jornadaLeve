@@ -18,10 +18,10 @@ const createPsicologa = async (req, res) => {
     });
 
     const {
-      nomeCompleto, crp, especialidades, biografia,
+      nomeCompleto, crp, especialidades, 
     } = req.body;
     const newPsicologa = new PsicologasModel({
-      nomeCompleto, crp, especialidades, biografia,
+      nomeCompleto, crp, especialidades, 
     });
     const savedPsicologa = await newPsicologa.save();
     res.status(201).json({ message: 'nova psciologa criada', savedPsicologa });

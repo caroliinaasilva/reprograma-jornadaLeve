@@ -19,7 +19,7 @@ const psicologaSchema = mongoose.Schema({
     type: [String],
   },
 
-  biografia: String,
+ 
 
 }, { timestamps: true });
 
