@@ -40,6 +40,9 @@
                 },
                 "dataDeNascimento": {
                   "example": "any"
+                },
+                "celular": {
+                  "example": "any"
                 }
               }
             }
@@ -117,6 +120,9 @@
                   "example": "any"
                 },
                 "dataDeNascimento": {
+                  "example": "any"
+                },
+                "celular": {
                   "example": "any"
                 }
               }

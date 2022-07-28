@@ -16,10 +16,10 @@ const createPatient = async (req, res) => {
       }
     });
 
-    const { cpf, nomeCompleto, dataDeNascimento } = req.body;
+    const { cpf, nomeCompleto, dataDeNascimento, celular} = req.body;
 
     const newPatient = new PacientesModel({
-      cpf, nomeCompleto, dataDeNascimento,
+      cpf, nomeCompleto, dataDeNascimento, celular
     });
     const savedPatient = await newPatient.save();
     res.status(201).json({ message: 'nova paciente criada', savedPatient });
@@ -62,9 +62,9 @@ const updatePatient = async (req, res) => {
       }
     });
 
-    const { nomeCompleto, cpf, dataDeNascimento } = req.body;
+    const { nomeCompleto, cpf, dataDeNascimento, celular} = req.body;
     const updatePatient = await PacientesModel.findByIdAndUpdate(req.params.id, {
-      nomeCompleto, cpf, dataDeNascimento,
+      nomeCompleto, cpf, dataDeNascimento, celular
     });
     res.status(200).json(updatePatient);
   } catch (error) {

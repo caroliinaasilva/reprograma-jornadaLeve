@@ -21,7 +21,12 @@ const pacienteSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  
+  celular:{
+    type: Number
+  },
 
+  
 }, { timestamps: true });
 
 const Model = mongoose.model('pacientes', pacienteSchema);
