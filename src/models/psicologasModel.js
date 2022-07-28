@@ -11,7 +11,7 @@ const psicologaSchema = mongoose.Schema({
   },
 
   crp: {
-    type: Number,
+    type: String,
     unique: true,
   },
 
