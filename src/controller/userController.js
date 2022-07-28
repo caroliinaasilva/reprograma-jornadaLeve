@@ -42,7 +42,7 @@ const login = (req, res) => {
     }
 
     const token = jwt.sign({ email: req.body.email }, SECRET);
-    return res.status(200).send(token);
+    return res.status(200).send("Token", token);
   });
 };
 const deleteById = async (req, res) => {
