@@ -10,16 +10,18 @@ const psicologasRoutes = require('./routes/psicologasRoutes');
 const userRoute = require('./routes/userRoute');
 
 const app = express();
-
+mongoose.connect();
 app.use(express.json());
+
 app.use(cors());
 
-mongoose.connect();
+
+
 app.use('/', index);
 app.use(pacientesRoutes);
 app.use(psicologasRoutes);
 app.use(userRoute);
 
-app.use('/minha-rota-de-documentacao', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+app.use('/reprograma-jornadaLeve', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 module.exports = app;
