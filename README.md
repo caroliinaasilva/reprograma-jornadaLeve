@@ -57,7 +57,7 @@ Aplicação disponível em [Jornada Leve](https://jornadaleve.herokuapp.com), pa
 
 ```bash
 # Clonar o repositório
-$ git clone https://github.com/Carolalves90/Projeto-Livre-FlagFeminino
+$ git clone 
 
 # Entrar na pasta do repositório
 $ cd reprograma-jornadaLeve
