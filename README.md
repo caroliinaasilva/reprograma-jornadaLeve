@@ -17,26 +17,24 @@ Aplicação disponível em [Jornada Leve](https://jornadaleve.herokuapp.com), pa
    |- 📁 src
    |   |
    |   |- 📁 controllers
-   |       |- 📑 colaboradorasController.js
-   |       |- 📑 jogosCampeonatoController.js
-   |       |- 📑 selecaofemininaController.js
-   |       |- 📑 timesfemininosController.js
+   |       |- 📑 pacientesController.js
+   |       |- 📑 psicologasController.js
+   |       |- 📑 userController.js
+   |   
    |
-   |   |- 📁 database
+   |    |- 📁 database
    |       |- 📑 mongooseConect.js
    |
    |   |- 📁 models
-   |       |- 📑 colaboradorasModel.js
-   |       |- 📑 jogosCampeonatoModel.js
-   |       |- 📑 selecaofemininaModel.js
-   |       |- 📑 timesfemininosModel.js
-   |
+   |       |- 📑 pacientesModel.js
+   |       |- 📑 psicologasModel.js
+   |       |- 📑 userModel.js
+   |      
    |    |- 📁 routes
-   |       |- 📑 colaboradorasRoutes.js 
    |       |- 📑 index.js
-   |       |- 📑 jogosCampeonato.js   
-   |       |- 📑 selecaofemininaRoutes.js
-   |       |- 📑 timesfemininosRoutes.js
+   |       |- 📑 pacientesRoutes.js   
+   |       |- 📑 psicologasRoutes.js
+   |       |- 📑 userfemininosRoutes.js
    |
    |    |- 📑 app.js
    |
