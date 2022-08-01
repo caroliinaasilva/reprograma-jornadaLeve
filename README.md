@@ -6,7 +6,7 @@ Projeto de conclusão do curso de Desenvolvimento Back-end - Todas em Tech | On1
 
 Este projeto é uma API REST que permite conectar psicólogas voluntárias a pacientes O projeto é uma API REST, que tem como objetivo conectar mulheres cis, negras e trans a psicólogas voluntárias, que queiram doar um pouquinho do seu tempo a escutar essas mulheres e com o mesmo intuito que o nome traz, ajudar a enfrentar a jornada de cada uma de maneira mais Leve.
 
-Aplicação disponível em [Projeto Delas](https://jornadaleve.herokuapp.com), para acessar a documentação do projeto [acesse aqui](https://jornadaleve.herokuapp.com/reprograma-jornadaLeve/) :purple_heart:
+Aplicação disponível em [Jornada Leve](https://jornadaleve.herokuapp.com), para acessar a documentação do projeto [acesse aqui](https://jornadaleve.herokuapp.com/reprograma-jornadaLeve/) :purple_heart:
 
 
 
