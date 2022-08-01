@@ -25,3 +25,4 @@ app.use(userRoute);
 app.use('/reprograma-jornadaLeve', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 module.exports = app;
+
