@@ -12,7 +12,7 @@ Aplicação disponível em [Jornada Leve](https://jornadaleve.herokuapp.com), pa
 
 #### Arquitetura MRC
 ```
- 📁 Projeto-Livre-FlagFeminino
+ 📁 Reprograma-JornadaLeve
    |
    |- 📁 src
    |   |
