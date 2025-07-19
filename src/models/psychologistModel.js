@@ -1,28 +1,27 @@
 const mongoose = require('mongoose');
 
-const psicologaSchema = mongoose.Schema({
+const psychologistSchema = mongoose.Schema({
   _id: {
     type: mongoose.Types.ObjectId,
     default: mongoose.Types.ObjectId,
   },
-  nomeCompleto: {
+  fullName: {
     type: String,
     required: true,
   },
-
   crp: {
     type: String,
+    required: true, // Added required
     unique: true,
   },
-
-  especialidades: {
+  specialties: {
     type: [String],
   },
-
- 
-
+  biography: { // Added biography field
+    type: String,
+  },
 }, { timestamps: true });
 
-const Model = mongoose.model('psicologa', psicologaSchema);
+const Model = mongoose.model('psychologist', psychologistSchema);
 
 module.exports = Model;

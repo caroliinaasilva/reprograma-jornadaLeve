@@ -1,9 +1,10 @@
 {
-  "name": "reprograma-jornadaleve",
+  "name": "reprograma-lightjourney",
   "version": "1.0.0",
-  "description": "",
+  "description": "API to connect women to volunteer psychologists",
   "main": "server.js",
   "scripts": {
+    "test": "jest",
     "test:watch": "jest --watchAll",
     "start": "nodemon server.js",
     "swagger-autogen": "node swagger.js"
@@ -12,8 +13,13 @@
     "type": "git",
     "url": "git+https://github.com/caroliinaasilva/reprograma-jornadaLeve.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "api",
+    "psychology",
+    "women",
+    "volunteer"
+  ],
+  "author": "Carolina Silva",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/caroliinaasilva/reprograma-jornadaLeve/issues"
@@ -26,7 +32,7 @@
     "dotenv-safe": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "express": "^4.18.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^6.4.4",
     "save": "^2.5.0",
     "swagger-ui-express": "^4.5.0"
@@ -34,7 +40,7 @@
   "devDependencies": {
     "eslint": "^8.16.0",
     "jest": "28.1.0",
-    "nodemon": "^2.0.19",
+    "nodemon": "^3.1.10",
     "swagger-autogen": "^2.21.5"
   }
 }

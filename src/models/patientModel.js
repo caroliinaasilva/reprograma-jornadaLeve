@@ -1,34 +1,28 @@
 const mongoose = require('mongoose');
 
-const pacienteSchema = mongoose.Schema({
+const patientSchema = mongoose.Schema({
   _id: {
     type: mongoose.Types.ObjectId,
     default: mongoose.Types.ObjectId,
   },
-  nomeCompleto: {
+  fullName: {
     type: String,
     required: true,
-
   },
   cpf: {
-    type: Number,
+    type: String, // Changed to String for better formatting
     required: true,
     unique: true,
-
   },
-
-  dataDeNascimento: {
+  dateOfBirth: {
     type: String,
     required: true,
   },
-  
-  celular:{
-    type: Number
+  phone: {
+    type: String, // Changed to String for phone formatting
   },
-
-  
 }, { timestamps: true });
 
-const Model = mongoose.model('pacientes', pacienteSchema);
+const Model = mongoose.model('patients', patientSchema);
 
 module.exports = Model;
